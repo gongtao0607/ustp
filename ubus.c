@@ -135,7 +135,7 @@ ubus_bridge_state(struct ubus_context *ctx, struct ubus_object *obj,
 		return UBUS_STATUS_NOT_FOUND;
 
 	if (blobmsg_get_bool(tb[BRIDGE_STATE_ENABLED])) {
-		cfg = bridge_config_get(bridge_name, false);
+		cfg = bridge_config_get(bridge_name, true);
 		if (!cfg)
 			return UBUS_STATUS_NOT_FOUND;
 
